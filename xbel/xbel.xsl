@@ -15,5 +15,12 @@
         </html>
     </xsl:template>
     
+    <xsl:template match="folder">
+        <li>
+            <xsl:value-of select="title"/>
+            <xsl:apply-templates/>
+        </li>
+    </xsl:template>
+    
 
 </xsl:stylesheet>
