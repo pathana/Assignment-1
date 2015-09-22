@@ -7,9 +7,9 @@
                 <title><xsl:value-of select="/xbel/title"/></title>
             </head>
             <body>
-                <h1><xsl:value-of select="/xbel/title"/></h1>
+                <h2><xsl:value-of select="/xbel/title"/></h2>
                 <ul>
-                    <xsl:apply-templates/>
+                    <xsl:apply-templates select="/xbel/folder"/>
                 </ul>
             </body>
         </html>
@@ -18,8 +18,14 @@
     <xsl:template match="folder">
         <li>
             <xsl:value-of select="title"/>
-            <xsl:apply-templates/>
+            <xsl:if test="exists(folder)">
+                <xsl:apply-templates select="folder"/>
+            </xsl:if>
         </li>
+    </xsl:template>
+    
+    <xsl:template match="bookmark">
+        
     </xsl:template>
     
 
