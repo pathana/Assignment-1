@@ -19,7 +19,9 @@
         <li>
             <xsl:value-of select="title"/>
             <xsl:if test="exists(folder)">
-                <xsl:apply-templates select="folder"/>
+                <ul>
+                    <xsl:apply-templates select="folder"/>
+                </ul>
             </xsl:if>
         </li>
     </xsl:template>
